@@ -1,5 +1,8 @@
 require 'rack/test'
 require 'capybara/rspec'
+require 'webmock/rspec'
+require 'helpers'
+
 require_relative '../app.rb'
 
 RSpec.configure do |config|
@@ -10,5 +13,9 @@ RSpec.configure do |config|
 
   config.order = :random
   config.include Rack::Test::Methods
+  config.include Helpers
+
 end
+
+WebMock.allow_net_connect!
 
