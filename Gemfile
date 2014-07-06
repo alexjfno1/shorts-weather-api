@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'sinatra-assetpack'
 gem 'faraday'
 gem 'sass'
+gem 'puma'
 
 group :development, :test do
   gem 'rspec'
