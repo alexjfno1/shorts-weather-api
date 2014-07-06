@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
 gem 'sinatra'
+gem 'sinatra-assetpack'
 gem 'faraday'
+gem 'sass'
 
 group :development, :test do
   gem 'rspec'
