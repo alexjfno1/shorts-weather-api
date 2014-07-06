@@ -14,6 +14,7 @@ Stuff I want to do next
 ------------------------
 ### For the API
 1. Write some tests of course.
+2. Check if it is shorts weather today.
 
 ### For the webapp
 1. Add an email notifcation system to let you know if it will be shorts weather for a set location.
