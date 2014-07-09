@@ -18,6 +18,7 @@ class GoogleMaps
   def call_api lat, long
     google_maps_api = Faraday.new(url: "http://maps.googleapis.com/maps/api/geocode") do |faraday|
       faraday.adapter Faraday.default_adapter
+      faraday.response :logger
     end
     google_maps_api.get("json?latlng=#{lat},#{long}&sensor=false")
   end
