@@ -25,3 +25,13 @@ get "/shorts-weather" do
     is_it_shorts_weather: weather.shorts_weather?,
   }.to_json
 end
+
+get "/shorts-weather/get-position" do
+  content_type :json
+  halt 400 unless params[:address]
+  position_finder = GoogleMapsPositionFinder.new(params[:address])
+  {
+    latitude: position_finder.latitude,
+    longitude: position_finder.longitude
+  }.to_json
+end

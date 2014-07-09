@@ -15,7 +15,6 @@ class WeatherForecast
 
   def call_api(lat, long)
     weather_api = Faraday.new("https://api.forecast.io/forecast/c957d1bfacf86b27d11f25b5fd8d4c50") do |faraday|
-      faraday.response :logger
       faraday.adapter Faraday.default_adapter
     end
     weather_api.get("#{lat},#{long}?units=si")
