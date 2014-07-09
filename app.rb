@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/assetpack'
 require_relative 'lib/google_maps'
+require_relative 'lib/google_maps_position_finder'
 require_relative 'lib/weather_forecast'
 
 register Sinatra::AssetPack
