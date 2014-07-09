@@ -33,6 +33,7 @@ get "/shorts-weather/get-position" do
   position_finder = GoogleMapsPositionFinder.new(params[:address])
   {
     latitude: position_finder.latitude,
-    longitude: position_finder.longitude
+    longitude: position_finder.longitude,
+    address: position_finder.address
   }.to_json
 end

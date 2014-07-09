@@ -2,7 +2,7 @@ require 'faraday'
 
 class GoogleMapsPositionFinder
 
-  attr_reader :latitude, :longitude
+  attr_reader :latitude, :longitude, :address
 
   def initialize(address)
     @response = call_api(address)
@@ -14,6 +14,10 @@ class GoogleMapsPositionFinder
 
   def longitude
     position["lng"]
+  end
+
+  def address
+    JSON.parse(@response.body)["results"][0]["formatted_address"]
   end
 
   private

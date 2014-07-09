@@ -30,4 +30,9 @@ feature "Derive latitude and longitude values from an address using the Google M
     expect(last_response.body).to include('"longitude":-1.25')
   end
 
+  scenario "returns address" do
+    get "/shorts-weather/get-position?address=1%20Linden%20Road%20Coxheath"
+    expect(last_response.body).to include('"address":"1 Linden Road, Coxheath, Maidstone, Kent, ME17 4QS, UK"')
+  end
+
 end

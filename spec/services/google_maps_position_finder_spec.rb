@@ -31,4 +31,11 @@ describe GoogleMapsPositionFinder do
     expect(GoogleMapsPositionFinder.new("1 Linden Road Coxheath").longitude).to eq(-1.43)
   end
 
+  it "should return the formatted address for the given address" do
+    @stub_position_finder.to_return(body: <<-JSON)
+    {"results":[{"formatted_address":"1 Linden Road, Coxheath, Maidstone, Kent, ME17 4QS, UK"}]}
+    JSON
+    expect(GoogleMapsPositionFinder.new("1 Linden Road Coxheath").address).to eq("1 Linden Road, Coxheath, Maidstone, Kent, ME17 4QS, UK")
+  end
+
 end
