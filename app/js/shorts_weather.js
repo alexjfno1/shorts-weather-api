@@ -8,7 +8,9 @@ function setup() {
       url: "/shorts-weather?lat=" + position.coords.latitude + "&long=" + position.coords.longitude,
       type: "get"
     }).done(function(response){
-      $(".address").text(response.address);
+      $(".search-box").val(response.address);
+      $(".search-address").show();
+      $(".search-box").focus();
       if (response.shorts_weather) {
         setShortsWeather();
       } else {

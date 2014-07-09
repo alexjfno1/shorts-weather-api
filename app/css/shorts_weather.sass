@@ -9,19 +9,44 @@ div
   width: 100%
   text-align: center
   box-sizing: border-box
-  background-color: #57565C
   color: #fff
   &.question
     font-size: 44px
     padding: 30px 10px 0
     background-color: #2C343C
-  &.address
-    padding: 10px 10px
-    font-size: 18px
+  &.search-address
+    padding: 10px
+    display: none
+    &:before, &:after
+      content: " "
+      display: table
+    &:after
+      clear: both
+    .search-box
+      width: 100%
+      float: left
+      background: #57565c
+      border: none
+      font-size: 18px
+      color: #FFFFFF
+      font-family: 'Julius Sans One', sans-serif
+      text-align: center
+      padding: 10px 0
+    .search-button
+      width: 100%
+      float: left
+      background: #57565c
+      border: none
+      font-size: 18px
+      color: #FFFFFF
+      font-family: 'Julius Sans One', sans-serif
+      text-align: center
+      padding: 10px 0
   &.answer
     padding: 30px 10px
     font-size: 60px
     color: #000
+    clear: both
     &.no
       background-color: #C7463D
     &.yes
