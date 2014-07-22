@@ -25,7 +25,7 @@ function checkIfItIsShortsWeather(latitude, longitude) {
     type: "get"
   }).done(function(response){
     $(".search-box").val(response.address);
-    $(".search-address").show();
+    $(".search-wrapper").show();
     if (response.is_it_shorts_weather) {
       setShortsWeather();
     } else {

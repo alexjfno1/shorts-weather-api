@@ -1,3 +1,6 @@
+=mobile
+  @media screen and (max-width: 767px)
+    @content
 body
   font-family: 'Julius Sans One', sans-serif
   line-height: 1.6
@@ -6,7 +9,6 @@ body
   background-color: #2C343C
 
 div
-  width: 100%
   text-align: center
   box-sizing: border-box
   color: #fff
@@ -14,29 +16,44 @@ div
     font-size: 44px
     padding: 30px 10px 0
     background-color: #2C343C
-  &.search-address
-    padding: 10px
+  &.search-wrapper
+    width: 675px
+    padding: 10px 0
+    margin: 0 auto
+    +mobile
+      width: 100%
+      padding: 10px
     display: none
+  &.search-address
     &:before, &:after
       content: " "
       display: table
     &:after
       clear: both
     .search-box
-      width: 90%
+      display: inline-block
+      width: 450px
+      padding: 10px
+      +mobile
+        width: 90%
+        padding: 10px 5%
       float: left
       background: #57565c
       border: none
       font-size: 14px
       color: #FFFFFF
       font-family: 'Julius Sans One', sans-serif
-      padding: 10px 5%
     .search-button
-      width: 100%
+      display: inline-block
+      width: 200px
+      margin-left: 5px
+      +mobile
+        width: 100%
+        margin-left: 0
       float: left
       background: #57565c
       border: none
-      font-size: 18px
+      font-size: 14px
       color: #FFFFFF
       font-family: 'Julius Sans One', sans-serif
       text-align: center
